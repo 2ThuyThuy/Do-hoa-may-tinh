@@ -27,6 +27,12 @@ color4 vertex_colors[8]; /*Danh sách các màu tương ứng cho 8 đỉnh hìn
 
 GLuint program;
 
+GLdouble BASE_HEIGHT = 0.2, BASE_WIDTH = 0.2, UPPER_ARM_HEIGHT = 0.3, UPPER_ARM_WIDTH = 0.1, LOWER_ARM_HEIGHT = 0.2, LOWER_ARM_WIDTH = 0.05;
+mat4 instance;
+mat4 model_view;
+GLuint model_view_loc;
+GLfloat theta[] = { 0, 0, 0, 0 };
+
 void initCube()
 {
 	// Gán giá trị tọa độ vị trí cho các đỉnh của hình lập phương
@@ -110,15 +116,46 @@ void shaderSetup( void )
 	glEnableVertexAttribArray(loc_vColor);
 	glVertexAttribPointer(loc_vColor, 4, GL_FLOAT, GL_FALSE, 0, BUFFER_OFFSET(sizeof(points)));
 
+	model_view_loc = glGetUniformLocation(program, "Model_View");
+	
     glClearColor( 1.0, 1.0, 1.0, 1.0 );        /* Thiết lập màu trắng là màu xóa màn hình*/
 }
 
 
+void base()
+{
+	instance = Translate(0.0, 0.5 * BASE_HEIGHT, 0.0) * Scale(BASE_WIDTH, BASE_HEIGHT, BASE_WIDTH);
+
+	glUniformMatrix4fv(model_view_loc, 1, GL_TRUE, model_view * instance);
+	glDrawArrays(GL_TRIANGLES, 0, NumPoints);
+}
+
+void upper_arm()
+{
+	instance = Translate(0.0, 0.5 * UPPER_ARM_HEIGHT, 0.0) * Scale(UPPER_ARM_WIDTH, UPPER_ARM_HEIGHT, UPPER_ARM_WIDTH);
+	glUniformMatrix4fv(model_view_loc,1 ,  GL_TRUE, model_view * instance);
+	glDrawArrays(GL_TRIANGLES, 0, NumPoints);
+}
+
+void lower_arm()
+{
+	instance = Translate(0.0, 0.5 * LOWER_ARM_HEIGHT, 0.0) * Scale(LOWER_ARM_WIDTH, LOWER_ARM_HEIGHT, LOWER_ARM_WIDTH);
+
+	glUniformMatrix4fv(model_view_loc, 1, GL_TRUE, model_view * instance);
+	glDrawArrays(GL_TRIANGLES, 0, NumPoints);
+}
 void display( void )
 {
 	
-    glClear( GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT );                
-    glDrawArrays( GL_TRIANGLES, 0, NumPoints );    /*Vẽ các tam giác*/
+    glClear( GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT );            
+	model_view = RotateY(theta[0]);
+	base();
+	model_view = model_view * Translate(0.0, BASE_HEIGHT, 0.0) * RotateZ(theta[1]);
+	upper_arm();
+	model_view = model_view * Translate(0.0, UPPER_ARM_HEIGHT, 0.0) * RotateZ(theta[2]);
+	lower_arm();
+
+    //glDrawArrays( GL_TRIANGLES, 0, NumPoints );    /*Vẽ các tam giác*/
 	glutSwapBuffers();									   
 }
 
@@ -131,7 +168,32 @@ void keyboard( unsigned char key, int x, int y )
     case 033:			// 033 is Escape key octal value
         exit(1);		// quit program
         break;
+	case 'b':
+		theta[0] += 5;
+		if (theta[0] > 360) theta[0] -= 360;
+		break;
+	case 'B':
+		theta[0] -= 5;
+		if (theta[0] < 0) theta[0] += 360;
+		break;
+	case 'u':
+		theta[1] += 5;
+		if (theta[1] > 360) theta[1] -= 360;
+		break;
+	case 'U':
+		theta[1] -= 5;
+		if (theta[1] < 0) theta[1] += 360;
+		break;
+	case 'l':
+		theta[2] += 5;
+		if (theta[2] > 360) theta[2] -= 360;
+		break;
+	case 'L':
+		theta[2] -= 5;
+		if (theta[2] < 0) theta[2] += 360;
+		break;
     }
+	glutPostRedisplay();
 }
 
 
