@@ -1,0 +1,18 @@
+﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(514,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (GLSLExperiment.vcxproj).  This can lead to incorrect clean and rebuild behavior.
+cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+  Projection_Cube.cpp
+D:\Study\HOC_LOP\DoHoaMayTinh\OpenGL_FreeGlut_Glew\BaiTHso6_1_project_Projection\GLSLExperiment\Projection_Cube.cpp(33,42): warning C4305: 'initializing': truncation from 'double' to 'GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\OpenGL_FreeGlut_Glew\BaiTHso6_1_project_Projection\GLSLExperiment\Projection_Cube.cpp(61,44): warning C4305: 'argument': truncation from 'double' to 'GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\OpenGL_FreeGlut_Glew\BaiTHso6_1_project_Projection\GLSLExperiment\Projection_Cube.cpp(166,20): warning C4305: '*=': truncation from 'double' to 'GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\OpenGL_FreeGlut_Glew\BaiTHso6_1_project_Projection\GLSLExperiment\Projection_Cube.cpp(166,30): warning C4305: '*=': truncation from 'double' to 'GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\OpenGL_FreeGlut_Glew\BaiTHso6_1_project_Projection\GLSLExperiment\Projection_Cube.cpp(167,20): warning C4305: '*=': truncation from 'double' to 'GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\OpenGL_FreeGlut_Glew\BaiTHso6_1_project_Projection\GLSLExperiment\Projection_Cube.cpp(167,30): warning C4305: '*=': truncation from 'double' to 'GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\OpenGL_FreeGlut_Glew\BaiTHso6_1_project_Projection\GLSLExperiment\Projection_Cube.cpp(168,25): warning C4305: '*=': truncation from 'double' to 'GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\OpenGL_FreeGlut_Glew\BaiTHso6_1_project_Projection\GLSLExperiment\Projection_Cube.cpp(168,37): warning C4305: '*=': truncation from 'double' to 'GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\OpenGL_FreeGlut_Glew\BaiTHso6_1_project_Projection\GLSLExperiment\Projection_Cube.cpp(169,25): warning C4305: '*=': truncation from 'double' to 'GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\OpenGL_FreeGlut_Glew\BaiTHso6_1_project_Projection\GLSLExperiment\Projection_Cube.cpp(169,37): warning C4305: '*=': truncation from 'double' to 'GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\OpenGL_FreeGlut_Glew\BaiTHso6_1_project_Projection\GLSLExperiment\Projection_Cube.cpp(170,24): warning C4305: '*=': truncation from 'double' to 'GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\OpenGL_FreeGlut_Glew\BaiTHso6_1_project_Projection\GLSLExperiment\Projection_Cube.cpp(170,37): warning C4305: '*=': truncation from 'double' to 'GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\OpenGL_FreeGlut_Glew\BaiTHso6_1_project_Projection\GLSLExperiment\Projection_Cube.cpp(171,24): warning C4305: '*=': truncation from 'double' to 'GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\OpenGL_FreeGlut_Glew\BaiTHso6_1_project_Projection\GLSLExperiment\Projection_Cube.cpp(171,37): warning C4305: '*=': truncation from 'double' to 'GLfloat'
+  GLSLExperiment.vcxproj -> D:\Study\HOC_LOP\DoHoaMayTinh\OpenGL_FreeGlut_Glew\BaiTHso6_1_project_Projection\Debug\GLSLExperiment_Projection.exe
