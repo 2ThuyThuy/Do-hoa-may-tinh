@@ -156,9 +156,10 @@ void Robot_arm()
 	model_view = model_view * Translate(0, 0.3, 0) * RotateZ(theta[2]);
 	lower_arm();
 }
-GLfloat l = -1.0, r = 1.0;
-GLfloat bottom = -1.0, top = 1.0;
-GLfloat zNear = 0.5, zFar = 3.0;
+
+GLfloat l = -0.5, r = 0.5;
+GLfloat bottom = -0.5, top = 0.5;
+GLfloat zNear = 0.5, zFar = 10;
 
 void display( void )
 {
@@ -166,8 +167,8 @@ void display( void )
     glClear( GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT );                
     //glDrawArrays( GL_TRIANGLES, 0, NumPoints );    /*Vẽ các tam giác*/
 
-	point4 eye(0.5, 1, -1.5, 1);
-	point4 at(0.0, 0.0, 0.0, 1.0);
+	vec4 eye(0, 1, -2, 1);
+	vec4 at(0.0, 0.0, 0.0, 1.0);
 	vec4 up(0.0, 1.0, 0.0, 1.0);
 
 	mat4 mv = LookAt(eye, at, up);
@@ -215,22 +216,12 @@ void keyboard( unsigned char key, int x, int y )
 		theta[2] -= 5;
 		if (theta[2] < 0) theta[2] = 360;
 		break;
-	case 'x': l *= 1.1; r *= 1.1; break;
-	case 'X': l *= 0.9; r *= 0.9; break;
-	case 'y': bottom *= 1.1; top *= 1.1; break;
-	case 'Y': bottom *= 0.9; top *= 0.9; break;
-	case 'z': zNear *= 1.1; zFar *= 1.1; break;
-	case 'Z': zNear *= 0.9; zFar *= 0.9; break;
+	
 	case ' ':
 		theta[0] = 0;
 		theta[1] = 0;
 		theta[2] = 0;
-		l = -1.0;
-		r = 1.0;
-		bottom = -1.0;
-		top = 1.0;
-		zNear = 0.5;
-		zFar = 3.0;
+
 		break;
     }
 	glutPostRedisplay();
