@@ -1,0 +1,11 @@
+﻿  main.cpp
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(131,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(158,47): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(346,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(346,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(346,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(526,34): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(536,35): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(620,15): warning C4305: '-=': truncation from 'double' to 'GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(624,15): warning C4305: '+=': truncation from 'double' to 'GLfloat'
+  OpenGL.vcxproj -> D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\Debug\OpenGL.exe
