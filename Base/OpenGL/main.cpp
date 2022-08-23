@@ -82,11 +82,14 @@ color4 mauPhanXaGuongTron;
 #pragma  endregion Các biến ánh sáng, vật liệu
 
 #pragma region 
-GLfloat theta[3] = { 0, 0, 0 };
+GLfloat cam_Eye[3] = { 0, 5, 6 };
+float cam_Rotation[3] = { 0,0,90 };
 GLfloat dr = 5;
-vec4 eye(0, 0, 5, 1);
+vec4 eye(0, 5, -5, 1);
 vec4 at(0, 0, 0, 1);
 vec4 up(0, 1, 0, 1);
+
+bool che_do_chi_tiet = false;
 #pragma endregion Các biến hành động
 
 
@@ -345,6 +348,14 @@ color4 RGBtoColor(int _R, int _G, int _B)
 {
 	return color4(RGBConvert(_R), RGBConvert(_G), RGBConvert(_B), 1.0);
 }
+color4 RGBtoColor(int _R, int _G, int _B, int _A)
+{
+	return color4(RGBConvert(_R), RGBConvert(_G), RGBConvert(_B), RGBConvert(_A));
+}
+float DEGtoRAD(float DEG)
+{
+	return DEG / 360 * 2 * M_PI;
+}
 void TronMau()
 {
 	mauGocTron = mauAnhSang * mauVatLieu;
@@ -370,19 +381,19 @@ void TaoVatLieu(color4 mauGoc, color4 mauPhanXa, color4 mauPXGuong, float doBong
 void VeHinhLapPhuong(mat4 _symbol, mat4 _matrixPhanCap)
 {
 	glUniformMatrix4fv(model_loc, 1, GL_TRUE, wolrd_matrix * _matrixPhanCap * _symbol);
-	glDrawArrays(GL_TRIANGLES, 0, soDinhLapPhuong);    
+	glDrawArrays(GL_TRIANGLES, 0, soDinhLapPhuong);    /*Vẽ các tam giác*/
 }
 // Hàm vẽ hình trụ tâm O, bán kính đáy 0.5, chiều cao 1 với ma trận _matrix * _symbol
 void VeHinhTru(mat4 _symbol, mat4 _matrix)
 {
 	glUniformMatrix4fv(model_loc, 1, GL_TRUE, wolrd_matrix * _matrix * _symbol);
-	glDrawArrays(GL_TRIANGLES, 36, soDinhHinhTru);   
+	glDrawArrays(GL_TRIANGLES, 36, soDinhHinhTru);    /*Vẽ các tam giác*/
 }
 // Hàm vẽ hình tròn tâm O, bán kính 0.5 với ma trận _matrix * _symbol
 void VeHinhTron(mat4 _symbol, mat4 _matrix)
 {
 	glUniformMatrix4fv(model_loc, 1, GL_TRUE, wolrd_matrix * _matrix * _symbol);
-	glDrawArrays(GL_TRIANGLES, 132, soDinhHinhTron);  
+	glDrawArrays(GL_TRIANGLES, 132, soDinhHinhTron);    /*Vẽ các tam giác*/
 }
 #pragma endregion Các hàm tạo sẵn
 
@@ -429,7 +440,7 @@ void SetupShader(void)
 	view_loc = glGetUniformLocation(program, "View");
 
 	glEnable(GL_DEPTH_TEST);
-	glClearColor(1.0, 1.0, 1.0, 1.0);        /* Thiết lập màu trắng là màu xóa màn hình*/
+	glClearColor(33.0/255, 114.0/255, 160.0/255, 1.0);        /* Thiết lập màu trắng là màu xóa màn hình*/
 }
 #pragma endregion Tạo GPU buffer và setup shader
 
@@ -449,10 +460,278 @@ void SetupShader(void)
 // Biến matrix dùng cho mô hình phân cấp
 mat4 matrixPhanCapDat;
 
+color4 Dat_vl;
+color4 Dat_kt;
+color4 Dat_pxg;
+mat4 Dat_symbol;
 
+float Dat_DiChuyenX;
+float Dat_DiChuyenZ;
+float Dat_BanhLan;
+float Dat_Xoay = 90;
+float Dat_MoCua = 0;
+vec3 Dat_ViTriCu;
+vec3 Dat_ViTriMoi;
+
+// Bánh có bán kính
+void Dat_CacBanhSau()
+{
+	// Màu xám
+	Dat_vl = RGBtoColor(50, 50, 50);
+	Dat_kt = RGBtoColor(80, 80, 80);
+	Dat_pxg = RGBtoColor(120, 120, 120);
+	TaoVatLieu(Dat_vl, Dat_kt, Dat_pxg, 1000);
+	// Trục xoay bánh xe
+	Dat_symbol = Scale(0.2, 0.2, 1.8) * RotateX(90);
+	VeHinhTru(Dat_symbol, matrixPhanCapDat);
+
+	// Màu đen
+	Dat_vl = RGBtoColor(10, 10, 10);
+	Dat_kt = RGBtoColor(30, 30, 30);
+	Dat_pxg = RGBtoColor(30, 30, 30);
+	TaoVatLieu(Dat_vl, Dat_kt, Dat_pxg, 1000);
+	// Bánh xe trái và phải, bán kinh 1m
+	Dat_symbol = Translate(0, 0, 0.5) * Scale(2, 2, 0.5) * RotateX(90);
+	VeHinhTru(Dat_symbol, matrixPhanCapDat);
+
+	Dat_symbol = Translate(0, 0, -0.5) * Scale(2, 2, 0.5) * RotateX(90);
+	VeHinhTru(Dat_symbol, matrixPhanCapDat);
+}
+
+void Dat_BanhTruoc()
+{
+	// Màu xám
+	Dat_vl = RGBtoColor(50, 50, 50);
+	Dat_kt = RGBtoColor(80, 80, 80);
+	Dat_pxg = RGBtoColor(120, 120, 120);
+	TaoVatLieu(Dat_vl, Dat_kt, Dat_pxg, 1000);
+	// Trục
+	Dat_symbol = Scale(0.2, 0.2, 1.8) * RotateX(90);
+	VeHinhTru(Dat_symbol, matrixPhanCapDat);
+
+	// Màu đen
+	Dat_vl = RGBtoColor(10, 10, 10);
+	Dat_kt = RGBtoColor(30, 30, 30);
+	Dat_pxg = RGBtoColor(30, 30, 30);
+	TaoVatLieu(Dat_vl, Dat_kt, Dat_pxg, 1000);
+	// Cái Lu
+	Dat_symbol = Scale(2, 2, 1.3) * RotateX(90);
+	VeHinhTru(Dat_symbol, matrixPhanCapDat);
+}
+
+void Dat_ThanXe()
+{
+	Dat_vl = RGBtoColor(200, 200, 50, 50);
+	Dat_kt = RGBtoColor(225, 225, 115);
+	Dat_pxg = RGBtoColor(237, 237, 186);
+	TaoVatLieu(Dat_vl, Dat_kt, Dat_pxg, 1000);
+	// Vẽ khối ngồi
+
+	Dat_symbol = Translate(0.25, 1.75, 0.75) * Scale(1.5, 2, 0.02);
+	VeHinhLapPhuong(Dat_symbol, matrixPhanCapDat);
+
+	Dat_symbol = Translate(0.25, 1, -0.75) * Scale(1.5, 0.5, 0.02);
+	VeHinhLapPhuong(Dat_symbol, matrixPhanCapDat);
+
+	Dat_symbol = Translate(1, 1.75, 0) * Scale(0.02, 2, 1.5);
+	VeHinhLapPhuong(Dat_symbol, matrixPhanCapDat);
+
+	Dat_symbol = Translate(-0.5, 1.75, 0) * Scale(0.02, 2, 1.5);
+	VeHinhLapPhuong(Dat_symbol, matrixPhanCapDat);
+
+	Dat_symbol = Translate(0.25, 2.74, 0) * Scale(1.5, 0.02, 1.5);
+	VeHinhLapPhuong(Dat_symbol, matrixPhanCapDat);
+
+	Dat_symbol = Translate(0.25, 0.75, 0) * Scale(1.5, 0.02, 1.5);
+	VeHinhLapPhuong(Dat_symbol, matrixPhanCapDat);
+
+	// Vẽ cái gờ cho chỗ ngồi
+	Dat_symbol = Translate(-0.5, 2.5, 0) * Scale(0.5, 0.5, 1.5) * RotateX(90);
+	VeHinhTru(Dat_symbol, matrixPhanCapDat);
+
+	Dat_symbol = Translate(2, 0.75, 0.8) * Scale(0.5, 2, 0.1);
+	VeHinhLapPhuong(Dat_symbol, matrixPhanCapDat);
+
+	Dat_symbol = Translate(2, 0.75, -0.8) * Scale(0.5, 2, 0.1);
+	VeHinhLapPhuong(Dat_symbol, matrixPhanCapDat);
+
+	Dat_symbol = Translate(-1, 0, 0.7) * Scale(3, 0.5, 0.1);
+	VeHinhLapPhuong(Dat_symbol, matrixPhanCapDat);
+
+	Dat_symbol = Translate(-1, 0, -0.7) * Scale(3, 0.5, 0.1);
+	VeHinhLapPhuong(Dat_symbol, matrixPhanCapDat);
+
+	Dat_vl = RGBtoColor(10, 10, 10);
+	Dat_kt = RGBtoColor(30, 30, 30);
+	Dat_pxg = RGBtoColor(30, 30, 30);
+	TaoVatLieu(Dat_vl, Dat_kt, Dat_pxg, 1000);
+	Dat_symbol = Translate(2, 1.5, 0) * Scale(2, 1, 1.5);
+	VeHinhLapPhuong(Dat_symbol, matrixPhanCapDat);
+
+	Dat_symbol = Translate(3, 1.5, 0) * Scale(1, 1, 1.5) * RotateX(90);
+	VeHinhTru(Dat_symbol, matrixPhanCapDat);
+
+	Dat_symbol = Translate(0.25, 0.5, 0.8) * Scale(0.5, 1, 0.1);
+	VeHinhLapPhuong(Dat_symbol, matrixPhanCapDat);
+
+	Dat_symbol = Translate(0.25, 0.5, -0.8) * Scale(0.5, 1, 0.1);
+	VeHinhLapPhuong(Dat_symbol, matrixPhanCapDat);
+
+	Dat_symbol = Translate(-0.35, 1.5, 0) * RotateZ(-30) * Scale(0.05, 0.2, 0.05);
+	VeHinhTru(Dat_symbol, matrixPhanCapDat);
+
+	Dat_symbol = Translate(-0.278, 1.625, 0) * RotateZ(-30) * Scale(0.3, 0.05, 0.3);
+	VeHinhTru(Dat_symbol, matrixPhanCapDat);
+
+	Dat_symbol = Translate(0.394, 1, 0) * Scale(0.5, 0.5, 0.5);
+	VeHinhLapPhuong(Dat_symbol, matrixPhanCapDat);
+
+}
+
+void Dat_CuaXe()
+{
+	Dat_vl = RGBtoColor(190, 117, 58);
+	Dat_kt = RGBtoColor(190, 117, 58);
+	Dat_pxg = RGBtoColor(216, 193, 174);
+	TaoVatLieu(Dat_vl, Dat_kt, Dat_pxg, 1000);
+
+	Dat_symbol = Translate(0.75, 0, 0) * Scale(1.5, 1.5, 0.02);
+	VeHinhLapPhuong(Dat_symbol, matrixPhanCapDat);
+}
+
+// Tạo hồ nước trên mặt đất
+void Dat_HoNuoc(mat4 _trans)
+{
+	Dat_vl = RGBtoColor(32, 90, 199);
+	Dat_kt = RGBtoColor(106, 147, 222);
+	Dat_pxg = RGBtoColor(206, 217, 239);
+	TaoVatLieu(Dat_vl, Dat_kt, Dat_pxg, 1000);
+	Dat_symbol = Translate(0, -0.9, 0) * Scale(10, 0, 10);
+	VeHinhTru(Dat_symbol, _trans);
+}
+
+void Dat_CotBeTong(mat4 _trans)
+{
+	Dat_vl = RGBtoColor(144, 144, 144);
+	Dat_kt = RGBtoColor(155, 155, 155);
+	Dat_pxg = RGBtoColor(144, 144, 144);
+	TaoVatLieu(Dat_vl, Dat_kt, Dat_pxg, 1000);
+	Dat_symbol = Translate(0, -0.5, 0) * Scale(1, 1, 10) * RotateX(90);
+	VeHinhTru(Dat_symbol, _trans);
+}
+
+// Bộ 3 cột bê tông trên mặt đất
+void Dat_Bo3CotBeTong(mat4 _trans)
+{
+	Dat_vl = RGBtoColor(144, 144, 144);
+	Dat_kt = RGBtoColor(155, 155, 155);
+	Dat_pxg = RGBtoColor(144, 144, 144);
+	TaoVatLieu(Dat_vl, Dat_kt, Dat_pxg, 1000);
+	Dat_symbol = Translate(0.5, -0.5, 0) * Scale(1, 1, 10) * RotateX(90);
+	VeHinhTru(Dat_symbol, _trans);
+	Dat_symbol = Translate(-0.5, -0.5, 0) * Scale(1, 1, 10) * RotateX(90);
+	VeHinhTru(Dat_symbol, _trans);
+	Dat_symbol = Translate(0, 0.2, 0) * Scale(1, 1, 10) * RotateX(90);
+	VeHinhTru(Dat_symbol, _trans);
+}
+
+void Dat_CaiCayTo(mat4 _trans)
+{
+	// Thân cây
+	Dat_vl = RGBtoColor(114, 66, 18);
+	Dat_kt = RGBtoColor(124, 76, 29);
+	Dat_pxg = RGBtoColor(124, 76, 29);
+	TaoVatLieu(Dat_vl, Dat_kt, Dat_pxg, 10000);
+	Dat_symbol = Translate(0, -1, 0) * Scale(2,  8, 2) * Translate(0, 0.5, 0);
+	VeHinhTru(Dat_symbol, _trans);
+	// Cành
+	Dat_symbol = Translate(0, 2, 0) * RotateZ(-45) * Scale(1,  5, 1) * Translate(0, 0.5, 0);
+	VeHinhTru(Dat_symbol, _trans);
+	Dat_symbol = Translate(0, 1, 0) * RotateZ(45) * Scale(1,  5, 1) * Translate(0, 0.5, 0);
+	VeHinhTru(Dat_symbol, _trans);
+
+	// Rễ
+	Dat_symbol = Translate(0, -0.8, 0) * RotateY(-11) * RotateZ(100) * Scale(0.5,  3, 0.5) * Translate(0, 0.5, 0);
+	VeHinhTru(Dat_symbol, _trans);
+	Dat_symbol = Translate(0, -0.7, 0) * RotateY(69) * RotateZ(100) * Scale(0.7,  3, 0.8) * Translate(0, 0.5, 0);
+	VeHinhTru(Dat_symbol, _trans);
+	Dat_symbol = Translate(0, -0.7, 0) * RotateY(195) * RotateZ(100) * Scale(0.7,  3, 0.4) * Translate(0, 0.5, 0);
+	VeHinhTru(Dat_symbol, _trans);
+
+	// Lá cây
+	Dat_vl = RGBtoColor(61, 187, 52);
+	Dat_kt = RGBtoColor(77, 196, 68);
+	Dat_pxg = RGBtoColor(132, 208, 127);
+	TaoVatLieu(Dat_vl, Dat_kt, Dat_pxg, 100);
+	Dat_symbol = Translate(0, 10, 0) * Scale(10, 10, 10);
+	VeHinhTron(Dat_symbol, _trans);
+	Dat_symbol = Translate(5, 7, 0) * RotateZ(34) * RotateX(56) * RotateY(78) * Scale(6, 6, 7);
+	VeHinhTron(Dat_symbol, _trans);
+	Dat_symbol = Translate(-4, 5, 0) * RotateZ(34) * RotateX(56) * RotateY(78) * Scale(4, 3, 5);
+	VeHinhTron(Dat_symbol, _trans);
+	
+}
+
+void Dat_San()
+{
+	// Đất
+	Dat_vl = RGBtoColor(129, 133, 65);
+	Dat_kt = RGBtoColor(30, 30, 30);
+	Dat_pxg = RGBtoColor(30, 30, 30);
+	TaoVatLieu(Dat_vl, Dat_kt, Dat_pxg, 1000);
+	Dat_symbol = Translate(0, -1, 0) * Scale(40, 0.01, 40);
+	VeHinhLapPhuong(Dat_symbol, matrixPhanCapDat);
+
+	// Vẽ hồ nước
+	Dat_HoNuoc(Translate(10, 0, 10));
+
+	// Vẽ cái cây
+	Dat_CaiCayTo(Translate(9, 0, -13) * RotateY(145));
+	Dat_CaiCayTo(Translate(-8, 0, 6) * Scale(0.7,0.7,0.7));
+
+	// Cot Be tong
+	Dat_Bo3CotBeTong(Translate(17, 0, 12));
+
+	// Vẽ vài quả bóng màu đỏ
+	Dat_vl = RGBtoColor(170, 24, 24);
+	Dat_kt = RGBtoColor(205, 76, 76);
+	Dat_pxg = RGBtoColor(224, 145, 145);
+	TaoVatLieu(Dat_vl, Dat_kt, Dat_pxg, 100);
+	Dat_symbol = Translate(4, -1 + 0.25, -5) * Scale(0.5, 0.5, 0.5);
+	VeHinhTron(Dat_symbol, matrixPhanCapDat);
+	Dat_symbol = Translate(-5, -1 + 0.25, -8) * Scale(0.5, 0.5, 0.5);
+	VeHinhTron(Dat_symbol, matrixPhanCapDat);
+	Dat_symbol = Translate(-5, -1 + 0.25, 8) * Scale(0.5, 0.5, 0.5);
+	VeHinhTron(Dat_symbol, matrixPhanCapDat);
+	Dat_symbol = Translate(5, -1 + 0.25, 8) * Scale(0.5, 0.5, 0.5);
+	VeHinhTron(Dat_symbol, matrixPhanCapDat);
+
+	// Vẽ vài quả bóng, cột thấp màu Cam
+	Dat_vl = RGBtoColor(218, 119, 54);
+	Dat_kt = RGBtoColor(205, 76, 76);
+	Dat_pxg = RGBtoColor(224, 145, 145);
+	TaoVatLieu(Dat_vl, Dat_kt, Dat_pxg, 100);
+	Dat_symbol = Translate(14, -1 + 0.25, -9) * Scale(0.5, 0.5, 0.5);
+	VeHinhTron(Dat_symbol, matrixPhanCapDat);
+	Dat_symbol = Translate(-14, -1 + 0.25, -9) * Scale(0.5, 0.5, 0.5);
+	VeHinhTru(Dat_symbol, matrixPhanCapDat);
+	Dat_symbol = Translate(-14, -1 + 0.25, 9) * Scale(0.5, 0.5, 0.5);
+	VeHinhTru(Dat_symbol, matrixPhanCapDat);
+}
+// Main Đạt
 void TrinhTienDat()
 {
 	matrixPhanCapDat = mat4();
+	Dat_San();
+	matrixPhanCapDat = Translate(Dat_DiChuyenX, 0, Dat_DiChuyenZ) * RotateY(Dat_Xoay + 180);
+	Dat_ThanXe();
+	mat4 Dat_M1 = matrixPhanCapDat;
+	matrixPhanCapDat = Dat_M1 * Translate(-0.5, 2, -0.75) * RotateY(Dat_MoCua);
+	Dat_CuaXe();
+	matrixPhanCapDat = Dat_M1 * Translate(2, 0, 0) * RotateZ(Dat_BanhLan / 2 / M_PI * 360);
+	Dat_CacBanhSau();
+	matrixPhanCapDat = Dat_M1 * Translate(-2.5, 0, 0) * RotateZ(Dat_BanhLan / 2 / M_PI * 360);
+	Dat_BanhTruoc();
 }
 #pragma endregion Trịnh Tiến Đạt
 
@@ -493,6 +772,8 @@ void Phuong()
 #pragma region 
 // Biến matrix dùng cho mô hình phân cấp
 mat4 matrixPhanCapLinh;
+
+
 
 
 void Linh()
@@ -539,6 +820,7 @@ void QuaBong()
 
 void MauBan()
 {
+	// M = I
 	matrixPhanCapBan = mat4();
 	MatBan();
 	// Quả bóng dịch x,y
@@ -549,28 +831,26 @@ void MauBan()
 
 
 
-
-
-
 #pragma region 
 void DisplayModels(void)
 {
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-
+	//wolrd_matrix = RotateY(cam_Eye[1]);
 
 	//MauBan();
-	//TrinhTienDat();
+	TrinhTienDat();
 	//VuQuangDang();
-	Thuy();
+	//Thuy();
 	//Linh();
 	//Phuong();
 
-
-	view = LookAt(eye, at, up);
+	//eye = vec4(cam_Eye[0], cam_Eye[1], cam_Eye[2], 1);
+	at = vec4(cosf(DEGtoRAD(cam_Rotation[0])), 0, cosf(DEGtoRAD(cam_Rotation[2])), 0) + eye;
+	view = RotateX(cam_Rotation[1]) * LookAt(eye, at, up);
 	glUniformMatrix4fv(view_loc, 1, GL_TRUE, view);
-	projection = Frustum(-0.5, 0.5, -0.5, 0.5, 1, 50);
+	projection = Frustum(-0.01, 0.01, -0.01, 0.01, 0.02, 50);
 	glUniformMatrix4fv(projection_loc, 1, GL_TRUE, projection);
-	glViewport(0, 0, 640, 640);
+	glViewport(0, 0, 1000, 1000);
 	glutPostRedisplay();
 	glutSwapBuffers();
 }
@@ -588,41 +868,83 @@ void DisplayModels(void)
 
 void KeyboardControl(unsigned char key, int x, int y)
 {
+	vec3 cam_forward = normalize(vec3(cosf(DEGtoRAD(cam_Rotation[0])) * abs(cosf(DEGtoRAD(cam_Rotation[1]))),
+		-sinf(DEGtoRAD(cam_Rotation[1])),
+		cosf(DEGtoRAD(cam_Rotation[2])) * abs(cosf(DEGtoRAD(cam_Rotation[1])))));
+	vec3 cam_right = normalize(cross(cam_forward, up));
+	vec4 cam_up = normalize(cross(cam_right, cam_forward));
 	switch (key) {
 	case 033:
 		exit(1);
 		break;
-	case 'x':
-		wolrd_matrix *= RotateX(dr);
-		glutPostRedisplay();
+	case 'f':
+		cam_Rotation[0] += 10 * (che_do_chi_tiet ? 0.1 : 1);
+		cam_Rotation[2] += 10 * (che_do_chi_tiet ? 0.1 : 1);
 		break;
-	case 'X':
-		wolrd_matrix *= RotateX(-dr);
-		glutPostRedisplay();
+	case 'h':
+		cam_Rotation[0] -= 10 * (che_do_chi_tiet ? 0.1 : 1);
+		cam_Rotation[2] -= 10 * (che_do_chi_tiet ? 0.1 : 1);
 		break;
-	case 'y':
-		wolrd_matrix *= RotateY(dr);
-		glutPostRedisplay();
+	case 't':
+		cam_Rotation[1] -= 10 * (che_do_chi_tiet ? 0.1 : 1);
+		if (cam_Rotation[1] <= -90) cam_Rotation[1] = -90;
 		break;
-	case 'Y':
-		wolrd_matrix *= RotateY(-dr);
-		glutPostRedisplay();
+	case 'g':
+		cam_Rotation[1] += 10 * (che_do_chi_tiet ? 0.1 : 1);
+		if (cam_Rotation[1] >= 90) cam_Rotation[1] = 90;
 		break;
-	case 'z':
-		wolrd_matrix *= RotateZ(dr);
-		glutPostRedisplay();
+	case 'w':
+		eye = eye + cam_forward * (che_do_chi_tiet ? 0.1 : 1);
 		break;
-	case 'Z':
-		wolrd_matrix *= RotateZ(-dr);
-		glutPostRedisplay();
+	case 's':
+		eye = eye - cam_forward * (che_do_chi_tiet ? 0.1 : 1);
 		break;
 	case 'a':
-		eye.z -= 0.1;
-		glutPostRedisplay();
+		eye = eye - cam_right * (che_do_chi_tiet ? 0.1 : 1);
 		break;
-	case 'A':
-		eye.z += 0.1;
-		glutPostRedisplay();
+	case 'd':
+		eye = eye + cam_right * (che_do_chi_tiet ? 0.1 : 1);
+		break;
+	case 'q':
+		eye = eye - cam_up * (che_do_chi_tiet ? 0.1 : 1);
+		break;
+	case 'e':
+		eye = eye + cam_up * (che_do_chi_tiet ? 0.1 : 1);
+		break;
+	case 'r':
+		che_do_chi_tiet = !che_do_chi_tiet;
+		break;
+	case 'i':
+		Dat_BanhLan += 0.1;
+		// Xe di tiến
+		Dat_DiChuyenX += cosf(DEGtoRAD(Dat_Xoay)) * 0.1;
+		Dat_DiChuyenZ += -sinf(DEGtoRAD(Dat_Xoay)) * 0.1;
+		break;
+	case 'k':
+		Dat_BanhLan -= 0.1;
+		// Xe di lùi
+		Dat_DiChuyenX -= cosf(DEGtoRAD(Dat_Xoay)) * 0.1;
+		Dat_DiChuyenZ -= -sinf(DEGtoRAD(Dat_Xoay)) * 0.1;
+		break;
+	case 'j':
+		Dat_Xoay += 5;
+		break;
+	case 'l':
+		Dat_Xoay -= 5;
+		break;
+	case 'm':
+		Dat_MoCua += 5;
+		if (Dat_MoCua >= 90)
+		{
+			Dat_MoCua = 90;
+		}
+		break;
+	case 'M':
+		Dat_MoCua -= 5;
+		if (Dat_MoCua <= 0)
+		{
+			Dat_MoCua = 0;
+		}
 		break;
 	}
 }
@@ -632,8 +954,8 @@ int main(int argc, char** argv)
 {
 	glutInit(&argc, argv);
 	glutInitDisplayMode(GLUT_DOUBLE | GLUT_RGBA);
-	glutInitWindowSize(640, 640);
-	glutInitWindowPosition(100, 150);
+	glutInitWindowSize(1000, 1000);
+	glutInitWindowPosition(0, 0);
 	glutCreateWindow("A Cube is rotated by KeyboardControl and shaded");
 
 

@@ -26,12 +26,9 @@ point4 vertices[8]; /* Danh sách 8 đỉnh của hình lập phương*/
 color4 vertex_colors[8]; /*Danh sách các màu tương ứng cho 8 đỉnh hình lập phương*/
 
 GLuint program;
-
-mat4 instance;
 mat4 model_view;
 GLuint model_view_loc;
 GLuint projection_loc;
-GLfloat theta[] = { 0, 0, 0 };
 
 
 void initCube()
@@ -118,7 +115,6 @@ void shaderSetup( void )
 	glVertexAttribPointer(loc_vColor, 4, GL_FLOAT, GL_FALSE, 0, BUFFER_OFFSET(sizeof(points)));
 
 	model_view_loc = glGetUniformLocation(program, "Model_View");
-	projection_loc = glGetUniformLocation(program, "projection");
 
 	glEnable(GL_DEPTH_TEST);
     glClearColor( 1.0, 1.0, 1.0, 1.0 );        /* Thiết lập màu trắng là màu xóa màn hình*/
@@ -126,59 +122,84 @@ void shaderSetup( void )
 
 void base()
 {
-	instance = Translate(0, 0.5 * 0.2, 0) * Scale(0.2, 0.2, 0.2);
+	mat4 instance = Translate(0, 0.5 * 0.2, 0) * Scale(0.2, 0.2, 0.2);
 	glUniformMatrix4fv(model_view_loc, 1, GL_TRUE, model_view * instance);
 	glDrawArrays(GL_TRIANGLES, 0, NumPoints);
 
 }
+#pragma region
+mat4 instance;
+float quay = 0;
 
-void upper_arm()
-{
-	instance = Translate(0, 0.5 * 0.3, 0) * Scale(0.1, 0.3, 0.1);
+void san_xe() {
+	instance = Scale(1.6,0.15, 0.6);
 	glUniformMatrix4fv(model_view_loc, 1, GL_TRUE, model_view * instance);
 	glDrawArrays(GL_TRIANGLES, 0, NumPoints);
 }
-void lower_arm()
-{
-	instance = Translate(0, 0.5 * 0.2, 0) * Scale(0.05, 0.2, 0.05);
+void chan_bun() {
+	instance = Scale(0.2, 0.01, 0.1);
+	glUniformMatrix4fv(model_view_loc, 1, GL_TRUE, model_view * instance);
+	glDrawArrays(GL_TRIANGLES, 0, NumPoints);
+
+	instance = Translate(-0.15,-0.04,0.0) * RotateZ(40) * Scale(0.15, 0.01, 0.1);
+	glUniformMatrix4fv(model_view_loc, 1, GL_TRUE, model_view * instance);
+	glDrawArrays(GL_TRIANGLES, 0, NumPoints);
+
+	instance = Translate(0.15, -0.041,0.0) * RotateZ(-40) * Scale(0.15, 0.01, 0.1);
 	glUniformMatrix4fv(model_view_loc, 1, GL_TRUE, model_view * instance);
 	glDrawArrays(GL_TRIANGLES, 0, NumPoints);
 }
+void than_xe() {
+	san_xe();
+	mat4 cap_1 = model_view;
+	model_view = cap_1 * Translate(0.5,0.1,0.35);
+	chan_bun();
+	model_view = cap_1 * Translate(-0.5,0.1,0.35);
+	chan_bun();
+	model_view = cap_1 * Translate(0.5, 0.1, -0.35);
+	chan_bun();
+	model_view = cap_1 * Translate(-0.5, 0.1, -0.35);
+	chan_bun();
+}
 
-void Robot_arm()
-{
-	model_view = RotateY(theta[0]);
-	base();
+const int inSoDinhHinhTru = 96;
+point4 arrDinhTamGiac[NumPoints + inSoDinhHinhTru];
+
+point4 cacDinhHinhTru[18]; //8*2+2
+
+void hinh_tru() {
+	float tren = 0.5;
+	float duoi = -tren;
+	// tam tren
+	cacDinhHinhTru[0] = point4(0, tren, 0, 1);
+	int soCanh = 8;
+
+	for (int i = 1; i <= soCanh; i++) {
+		float banKinh = 0.5;
+		float rad = (i - 1) * (360.0 / soCanh)/360*2*M_PI;
+
+		float x = banKinh * cosf(rad);
+		float z = banKinh * sinf(rad);
+
+		cacDinhHinhTru[i * 2-1] = point4(x, tren, z, 1);
+		cacDinhHinhTru[i * 2] = point4(x, duoi, z, 1);
+	}
 	
-	model_view = model_view * Translate(0, 0.2, 0)* RotateZ(theta[1]);
-	upper_arm();
-
-	model_view = model_view * Translate(0, 0.3, 0) * RotateZ(theta[2]);
-	lower_arm();
+	cacDinhHinhTru[17] = point4(0, duoi, 0, 1);
+}
+void Thuy() {
+	
 }
 
-GLfloat l = -0.5, r = 0.5;
-GLfloat bottom = -0.5, top = 0.5;
-GLfloat zNear = 0.5, zFar = 10;
-
+#pragma endregion Thuỳ
 void display( void )
 {
 	
     glClear( GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT );                
     //glDrawArrays( GL_TRIANGLES, 0, NumPoints );    /*Vẽ các tam giác*/
+	model_view = RotateY(quay);
+	Thuy();
 
-	vec4 eye(0, 1, -2, 1);
-	vec4 at(0.0, 0.0, 0.0, 1.0);
-	vec4 up(0.0, 1.0, 0.0, 1.0);
-
-	mat4 mv = LookAt(eye, at, up);
-
-	glUniformMatrix4fv(model_view_loc, 1, GL_TRUE, mv);
-
-	mat4 p = Frustum(l, r, bottom, top, zNear, zFar);
-	glUniformMatrix4fv(projection_loc, 1, GL_TRUE, p);
-
-	Robot_arm();
 
 	glutSwapBuffers();									   
 }
@@ -192,36 +213,8 @@ void keyboard( unsigned char key, int x, int y )
     case 033:			// 033 is Escape key octal value
         exit(1);		// quit program
         break;
-	case 'u':
-		theta[0] += 5;
-		if (theta[0] > 360) theta[0] = 0;
-		break;
-	case 'i':
-		theta[0] -= 5;
-		if (theta[0] < 0) theta[0] = 360;
-		break;
-	case 'o':
-		theta[1] += 5;
-		if (theta[1] > 360) theta[1] = 0;
-		break;
-	case 'p':
-		theta[1] -= 5;
-		if (theta[1] < 0) theta[1] = 360;
-		break;
-	case 'k':
-		theta[2] += 5;
-		if (theta[2] > 360) theta[2] = 0;
-		break;
-	case 'l':
-		theta[2] -= 5;
-		if (theta[2] < 0) theta[2] = 360;
-		break;
-	
-	case ' ':
-		theta[0] = 0;
-		theta[1] = 0;
-		theta[2] = 0;
-
+	case 'a':
+		quay += 5;
 		break;
     }
 	glutPostRedisplay();

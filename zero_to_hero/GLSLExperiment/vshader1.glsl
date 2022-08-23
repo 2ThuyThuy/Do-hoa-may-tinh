@@ -4,9 +4,9 @@ in vec4 vColor;
 out vec4 color;
 
 uniform mat4 Model_View;
-uniform mat4 projection;
+
 void main()
 {
-    gl_Position =  projection * Model_View * vPosition;
+    gl_Position =  Model_View * vPosition;
 	color=vColor;
 }//

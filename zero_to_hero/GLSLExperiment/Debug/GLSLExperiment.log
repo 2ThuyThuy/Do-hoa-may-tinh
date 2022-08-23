@@ -1,11 +1,15 @@
-﻿cl : command line warning D9035: option 'Gm' has been deprecated and will be removed in a future release
+﻿cl : command line  warning D9035: option 'Gm' has been deprecated and will be removed in a future release
   example1.cpp
-D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(129,38): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
-D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(129,61): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
-D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(137,38): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
-D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(137,61): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
-D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(143,38): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
-D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(143,63): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
-D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(153,47): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
-D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(156,47): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(125,43): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(125,66): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(135,32): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(140,33): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(144,38): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(144,77): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(148,39): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(148,79): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(155,45): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(157,46): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(159,48): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(161,49): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
   GLSLExperiment.vcxproj -> D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\Debug\GLSLExperiment.exe
