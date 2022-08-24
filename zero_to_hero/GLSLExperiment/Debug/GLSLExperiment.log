@@ -12,4 +12,6 @@ D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\exampl
 D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(157,46): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
 D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(159,48): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
 D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(161,49): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\GLSLExperiment\example1.cpp(179,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+example1.obj : warning LNK4075: ignoring '/EDITANDCONTINUE' due to '/SAFESEH' specification
   GLSLExperiment.vcxproj -> D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\zero_to_hero\Debug\GLSLExperiment.exe
