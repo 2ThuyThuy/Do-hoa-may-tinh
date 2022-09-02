@@ -1,1 +1,206 @@
-﻿  OpenGL.vcxproj -> D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\Debug\OpenGL.exe
+﻿  main.cpp
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(135,13): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(162,47): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(350,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(350,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(350,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(354,27): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(354,43): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(354,59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(354,75): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(358,23): warning C4244: 'return': conversion from 'double' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(446,56): warning C4305: 'argument': truncation from 'double' to 'GLclampf'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(518,34): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(527,30): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(540,63): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(543,63): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(546,57): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(549,37): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(549,61): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(552,38): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(552,62): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(555,62): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(562,37): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(562,58): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(565,38): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(565,59): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(568,35): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(568,56): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(571,36): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(571,57): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(584,39): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(584,60): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(587,40): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(587,61): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(590,38): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(590,78): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(593,41): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(593,80): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(596,36): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(617,40): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(617,63): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(619,41): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(619,64): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(631,59): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(642,35): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(668,34): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(689,35): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(691,35): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(691,85): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(693,35): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(693,86): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(718,57): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(726,56): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(778,38): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(790,28): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(797,110): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(799,111): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(801,85): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(841,67): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(844,68): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(847,69): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(850,68): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(853,67): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(856,68): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(859,67): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(862,68): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(866,91): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(866,77): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(869,93): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(869,79): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(872,93): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(872,79): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(875,91): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(875,77): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(878,67): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(903,66): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(915,82): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(918,54): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(918,88): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(929,54): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(929,88): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(932,54): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(932,91): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(935,74): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(935,60): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(935,97): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(938,62): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(938,85): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(941,68): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(941,54): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(941,91): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(944,68): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(944,54): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(944,91): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(948,82): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(951,54): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(951,89): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(987,108): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(987,90): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(990,54): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(990,112): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(990,94): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1000,68): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1003,67): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1006,67): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1009,89): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1012,89): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1015,67): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1018,90): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1021,90): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1024,68): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1027,53): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1027,108): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1030,52): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1030,106): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1033,54): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1033,107): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1036,55): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1036,109): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1046,47): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1049,50): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1049,87): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1052,49): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1052,86): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1061,84): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1073,67): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1075,68): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1077,67): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1079,68): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1081,59): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1081,67): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1083,62): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1083,71): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1096,71): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1098,70): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1100,70): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1102,70): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1104,68): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1106,68): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1146,65): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1156,67): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1156,96): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1156,87): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1158,69): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1158,97): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1158,88): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1160,84): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1162,50): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1162,87): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1164,86): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1166,49): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1166,86): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1169,68): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1169,96): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1169,87): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1171,70): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1171,98): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1171,89): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1173,85): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1175,51): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1175,89): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1177,87): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1179,50): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1179,87): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1182,68): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1185,48): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1185,71): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1195,82): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1198,84): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1201,83): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1237,37): warning C4244: 'argument': conversion from 'int' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1249,33): warning C4244: 'argument': conversion from 'int' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1254,34): warning C4244: 'argument': conversion from 'int' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1259,37): warning C4244: 'argument': conversion from 'int' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1321,34): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1331,35): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1365,57): warning C4305: 'argument': truncation from 'double' to 'const GLfloat'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1395,25): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1396,25): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1399,25): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1400,25): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1403,25): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1407,25): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1411,30): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1414,30): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1417,28): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1420,28): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1423,25): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1426,25): warning C4244: 'argument': conversion from 'double' to 'const GLfloat', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1432,21): warning C4305: '+=': truncation from 'double' to 'float'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1434,45): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1435,46): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1436,35): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1439,21): warning C4305: '-=': truncation from 'double' to 'float'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1441,45): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1442,46): warning C4244: '-=': conversion from 'double' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1443,35): warning C4244: '+=': conversion from 'double' to 'float', possible loss of data
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1474,29): warning C4305: '+=': truncation from 'double' to 'float'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1477,29): warning C4305: '-=': truncation from 'double' to 'float'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1486,24): warning C4305: '-=': truncation from 'double' to 'float'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1489,24): warning C4305: '+=': truncation from 'double' to 'float'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1492,21): warning C4305: '-=': truncation from 'double' to 'float'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1495,21): warning C4305: '+=': truncation from 'double' to 'float'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1512,24): warning C4305: '+=': truncation from 'double' to 'float'
+D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\OpenGL\main.cpp(1517,24): warning C4305: '-=': truncation from 'double' to 'float'
+  OpenGL.vcxproj -> D:\Study\HOC_LOP\DoHoaMayTinh\Do-hoa-may-tinh\Base\Debug\OpenGL.exe

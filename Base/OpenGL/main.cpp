@@ -83,7 +83,8 @@ color4 mauPhanXaGuongTron;
 
 #pragma region 
 //GLfloat cam_Eye[3] = { 0, 0, 0 };
-float cam_Rotation[3] = { 90,0,180 };
+//float cam_Rotation[3] = { 90,0,180 };
+float cam_Rotation[3] = {90,0,0 };
 //GLfloat dr = 5;
 vec4 eye(0, 5, 0, 1);
 vec4 at(0, 0, 0, 1);
@@ -817,10 +818,18 @@ void VuQuangDang()
 mat4 matrixPhanCapThuy;
 color4 Thuy_vl, Thuy_kt, Thuy_pxg;
 mat4 Thuy_symbol;
+
+mat4 vt_nang_tramsform;
+mat4 vt_nang_matrixPhanCap;
+mat4 Thuy_vitri_vt_nang;
+
 float Thuy_thanhNgang_cao = 31;
 float Thuy_quayThanhNgang = 0;
 float Thuy_dc_ConLan = -8;
 float Thuy_conMoc = 0;
+
+bool Thuy_check_moc[] = { false,false, false }; // 0: đã di chuyển r, 1 vào móc hay chưa
+
 void Thuy_lapPhuong_tru(mat4 _Transform, mat4 matrixPhanCap) {
 	// _Transform mã trận của cái lập phương
 
@@ -885,7 +894,6 @@ void Thuy_de(mat4 matrixPhanCap) {
 
 }
 
-
 void Thuy_vatTheNang(mat4 _Transform, mat4 matrixPhanCap) {
 
 	Thuy_vl = RGBtoColor(125, 125, 127);
@@ -943,6 +951,28 @@ void Thuy_moc(mat4 _Transform, mat4 matrixPhanCap) {
 	Thuy_symbol = _Transform * Translate(Thuy_dc_ConLan - 1.5 , 0, 0) * Scale(0.1, 1.5, 0.1) * Translate(0, 0.5, 0);
 	VeHinhLapPhuong(Thuy_symbol, matrixPhanCap);
 
+	//cout<< _Transform[0]<<" "<< _Transform[1]<<" "<<_Transform[2]<<" "<< matrixPhanCap[0]<< " " << matrixPhanCap[1]<< " " << matrixPhanCap[2]<<"\n";
+	mat4 Thuy_vitri_moc = _Transform * matrixPhanCap * Translate(Thuy_dc_ConLan, -1, 0);
+	//cout << matrixPhanCap[0] << " " << matrixPhanCap[1] << " " << _Transform[2] << "\n";
+	float Thuy_vung_hut = 2;
+
+	if (
+		Thuy_vitri_moc[0][3] >= Thuy_vitri_vt_nang[0][3] - Thuy_vung_hut && Thuy_vitri_moc[0][3] <= Thuy_vitri_vt_nang[0][3] + Thuy_vung_hut &&
+		Thuy_vitri_moc[1][3] >= Thuy_vitri_vt_nang[1][3] - Thuy_vung_hut && Thuy_vitri_moc[1][3] <= Thuy_vitri_vt_nang[1][3] + Thuy_vung_hut &&
+		Thuy_vitri_moc[2][3] >= Thuy_vitri_vt_nang[2][3] - Thuy_vung_hut && Thuy_vitri_moc[2][3] <= Thuy_vitri_vt_nang[2][3] + Thuy_vung_hut 
+		) {
+		Thuy_check_moc[2] = true;
+	}
+
+
+	if (Thuy_check_moc[1] && Thuy_check_moc[2]) {
+	//if (Thuy_check_moc[1]) {
+		vt_nang_matrixPhanCap = matrixPhanCap;
+		vt_nang_tramsform = _Transform* Translate(Thuy_dc_ConLan, -1, 0);
+		Thuy_check_moc[0] = true;
+
+	}
+
 }
 
 void Thuy_dayConMoc(mat4 _Transform, mat4 matrixPhanCap) {
@@ -960,7 +990,6 @@ void Thuy_dayConMoc(mat4 _Transform, mat4 matrixPhanCap) {
 	Thuy_symbol = _Transform * Translate(Thuy_dc_ConLan -1.5, -Thuy_conMoc, 0) * Scale(0.1, 0.5 + Thuy_conMoc, 0.1) * Translate(0, 0.5, 0);
 	VeHinhLapPhuong(Thuy_symbol, matrixPhanCap);
 }
-
 
 void Thuy_tuDien_ngang(mat4 _Transform, mat4 matrixPhanCap) {
 	Thuy_vl = RGBtoColor(203, 144, 30);
@@ -1007,7 +1036,6 @@ void Thuy_tuDien_ngang(mat4 _Transform, mat4 matrixPhanCap) {
 	Thuy_symbol = _Transform * Translate(-0.5, 1.5, -0.45) * RotateZ(-45) * RotateX(35) * Scale(0.05, 1.6, 0.05);
 	VeHinhLapPhuong(Thuy_symbol, matrixPhanCap);
 }
-
 
 void Thuy_TB_than(mat4 _Transform, mat4 matrixPhanCap) {
 	Thuy_vl = RGBtoColor(125, 125, 127);
@@ -1154,6 +1182,9 @@ void Thuy_Chop(mat4 _Transform, mat4 matrixPhanCap) {
 	Thuy_symbol = _Transform * Translate(0,5,0)  * Scale(0.3, 0.3, 2.1);
 	VeHinhLapPhuong(Thuy_symbol, matrixPhanCap);
 
+	Thuy_symbol = _Transform * Translate(0, 2.1, 0) * Scale(0.3, 0.3, 2.1);
+	VeHinhLapPhuong(Thuy_symbol, matrixPhanCap);
+
 	// daay caan bang
 	Thuy_vl = RGBtoColor(44, 43, 41);
 	Thuy_kt = RGBtoColor(64, 63, 61);
@@ -1164,17 +1195,40 @@ void Thuy_Chop(mat4 _Transform, mat4 matrixPhanCap) {
 	Thuy_symbol = _Transform * Translate(0, 5, 0)*RotateZ(12) * Scale(33.5, 0.1, 0.1) * Translate(-0.5, 0, 0);
 	VeHinhLapPhuong(Thuy_symbol, matrixPhanCap);
 
-	Thuy_symbol = _Transform * Translate(0, 5, 0) * RotateZ(25) * Scale(16, 0.1, 0.1) * Translate(-0.5, 0, 0);
+	Thuy_symbol = _Transform * Translate(0, 5, 0) * RotateZ(25) * Scale(16.8, 0.1, 0.1) * Translate(-0.5, 0, 0);
 	VeHinhLapPhuong(Thuy_symbol, matrixPhanCap);
 
 	Thuy_symbol = _Transform * Translate(0, 5, 0) * RotateZ(-28) * Scale(15, 0.1, 0.1) * Translate(0.5, 0, 0);
 	VeHinhLapPhuong(Thuy_symbol, matrixPhanCap);
 }
+void Thuy_vt_nang(mat4 _Transform, mat4 matrixPhanCap)
+{
+
+
+	Thuy_vl = RGBtoColor(78, 53, 38);
+	Thuy_kt = RGBtoColor(98, 73, 51);
+	Thuy_pxg = RGBtoColor(118, 93, 71);
+	TaoVatLieu(Thuy_vl, Thuy_kt, Thuy_pxg, 100);
+
+	Thuy_symbol = _Transform * Scale(5, 2, 2);
+	Thuy_vitri_vt_nang = _Transform * matrixPhanCap;
+
+	cout << Thuy_vitri_vt_nang[0] << " " << Thuy_vitri_vt_nang[1] << " " << Thuy_vitri_vt_nang[2] << "\n";
+	VeHinhLapPhuong(Thuy_symbol, matrixPhanCap);
+
+
+}
+
 void Thuy()
 {
 	matrixPhanCapThuy = Translate(25, 0, -25); // vị trí để project
 
-	
+	// logic cẩu vật thể khởi tạo
+	if (!Thuy_check_moc[0]) {
+		vt_nang_matrixPhanCap = matrixPhanCapThuy;
+		vt_nang_tramsform = Translate(-30, 0, 0);
+	}
+
 
 	Thuy_de(matrixPhanCapThuy);
 
@@ -1210,6 +1264,10 @@ void Thuy()
 	// Ngoắc
 	Thuy_moc(Translate(0, Thuy_thanhNgang_cao + Thuy_conMoc, 0), matrixPhanCapThuy_c1 * RotateY(Thuy_quayThanhNgang));
 	Thuy_dayConMoc(Translate(0, Thuy_thanhNgang_cao + Thuy_conMoc + 1 , 0), matrixPhanCapThuy_c1 * RotateY(Thuy_quayThanhNgang));
+
+	Thuy_vt_nang(vt_nang_tramsform, vt_nang_matrixPhanCap);
+
+
 }
 #pragma endregion Thuỳ
 
@@ -1436,6 +1494,12 @@ void KeyboardControl(unsigned char key, int x, int y)
 	case '.':
 		Thuy_conMoc += 0.2;
 		break;
+	case 'o':
+		if (Thuy_check_moc[2])
+		{
+			Thuy_check_moc[1] = !Thuy_check_moc[1];
+		}
+		break;
 	}
 }
 
@@ -1443,12 +1507,12 @@ void IdleControl()
 {
 	if (Dat_RungLaCayBenPhai)
 	{
-		Dat_RungLaCay += 0.001;
+		Dat_RungLaCay += 0.01;
 		if (Dat_RungLaCay >= 1) Dat_RungLaCayBenPhai = !Dat_RungLaCayBenPhai;
 	}
 	else
 	{
-		Dat_RungLaCay -= 0.001;
+		Dat_RungLaCay -= 0.01;
 		if (Dat_RungLaCay <= -1) Dat_RungLaCayBenPhai = !Dat_RungLaCayBenPhai;
 	}
 }
